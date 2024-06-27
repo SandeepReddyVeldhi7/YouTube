@@ -13,9 +13,12 @@ useEffect(()=>{
 },[])
 
 const  getVideos=async()=>{
-  const data=await fetch(YOUTUDE_VIDEOS_API );
+  const apiKey="AIzaSyBOrW85_qzdWsL0y_3Lw1itCdiirgIgovA";
+  const apiUrl=`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=${apiKey}`;
+
+  const data= await fetch(apiUrl);
   const json=await data.json();
- // console.log(json);
+  //console.log(json);
   setvideos(json.items);
 }
 const onlineStatus  =useOnlineStatus();
@@ -27,7 +30,7 @@ return(
 )
 
   return (
-    <div className='flex flex-wrap'>
+    <div className=' ml-24 md:flex flex-wrap '>
 
     {videos?.map((video)=>(
    <Link key={video.id} to={"/watch?v="+video.id} >

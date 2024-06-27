@@ -21,12 +21,11 @@ useEffect(()=>{
 
   return (
    
-   <div className='flex flex-col w-full '  >
-     <div className='px-5 flex '> 
-     <div className=''>
-      <iframe
-  width="1200"
-  height="700"
+   <div className='flex flex-col '  >
+     <div className='px-5 flex  '> 
+     <div className=' '>
+      <iframe 
+      className='w-[500px] md:w-[1200px] h-[400px] md:h-[700px]'
   src={"https://www.youtube.com/embed/"+ searchParams.get("v")}
   title="YouTube video player"
   frameBorder="0"
@@ -34,7 +33,7 @@ useEffect(()=>{
   allowFullScreen
 ></iframe>  
 </div>
-<div className="w-full"><LiveChat/></div>
+<div className="hidden md:inline-block w-full"><LiveChat/></div>
 
 </div>
     

@@ -16,7 +16,7 @@ const appRouter=createBrowserRouter ([{
  element:<Body/>,
  children:[{
   path:"/",
- element:<MainContainer/>,
+ element:<MainContainer />,
  },
  {
   path:"watch",
@@ -26,11 +26,7 @@ const appRouter=createBrowserRouter ([{
 
 errorElement : <Error/>,
 },
-
-
 ])
-
-
 
 function App() {
   return (
